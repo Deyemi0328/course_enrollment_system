@@ -1,0 +1,15 @@
+{% extends "basement.html" %}
+{% block title %}Enrollment{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Enrollment</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enroll</button>
+    </form>
+        <p style="color: red;">{{ message }}</p>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+{% extends "basement.html" %}
+{% block title %}Display Courses{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>DISPLAY COURSE</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>COURSE NAME</th>
+                <th>DESCRIPTION</th>
+                <th>DURATION</th>
+                <th>INSTRUCTOR</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.course_description }}</td>
+                <td>{{ course.course_duration }}</td>
+                <td>{{ course.course_instructor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

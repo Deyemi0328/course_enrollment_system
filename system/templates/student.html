@@ -1,0 +1,12 @@
+{% extends "basement.html" %}
+{% block title %}Student Registration{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Student Registration</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}

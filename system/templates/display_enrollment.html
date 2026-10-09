@@ -1,0 +1,33 @@
+{% extends 'basement.html' %}
+
+{% block title %}Display Enrollment{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>DISPLAY ENROLLMENT</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>COURSE NAME</th>
+                <th>ENROLLMENT DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enrollment in enrollments %}
+            <tr>
+                <td><a href="{% url 'student_info' id=enrollment.student.id %}">{{ enrollment.student.Firstname }}</a></td>
+                <td><a href="{% url 'student_info' id=enrollment.student.id %}">{{ enrollment.student.Lastname }}</a></td>
+                <td><a href="{% url 'course_info' id=enrollment.course.id %}">{{ enrollment.course.course_name }}</a></td>
+                <td>{{ enrollment.enrollment_date }}</td>
+            </tr>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No enrollments found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
